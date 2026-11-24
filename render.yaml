@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: dguard-camera-health
+    runtime: static
+    buildCommand: node build.js
+    staticPublishPath: dist
+    pullRequestPreviewsEnabled: false
+    envVars:
+      - key: ADMIN_PASSWORD   # senha do usuário "admin"
+        sync: false           # o Render pede o valor ao criar o Blueprint
+      - key: CAUE_PASSWORD    # senha do usuário "Caue"
+        sync: false
